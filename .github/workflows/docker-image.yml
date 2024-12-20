@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: List files for debugging
+      run: ls -la Jenkins-Zero-To-Hero-main/Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app/
+    - name: Build the Docker image
+      run: docker build \
+            -f Jenkins-Zero-To-Hero-main/Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile \
+            -t my-image-name:$(date +%s) \
+            Jenkins-Zero-To-Hero-main/Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app/
