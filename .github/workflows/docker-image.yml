@@ -17,4 +17,4 @@ jobs:
     - name: List files for debugging
       run: ls -la
     - name: Build the Docker image
-      run: docker build . --file ./Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . Jenkins-Zero-To-Hero-main/Jenkins-Zero-To-Hero-main/java-maven-sonar-argocd-helm-k8s/spring-boot-app/Dockerfile --tag my-image-name:$(date +%s)
